@@ -32,4 +32,28 @@ Create a folder, where the library will store its persistent data:
 
 ### Building the container
 
+```
 `docker build -t suculent/thinx-node-docker .`
+```
+
+### Using your own docker image
+
+Create new repository at [Docker Hub](https://hub.docker.com) e.g.: qooldev/thinx-docker-tutorial
+
+```
+`docker build -t qooldev/thinx-docker-tutorial .`
+
+`docker login`
+
+`docker push qooldev/thinx-docker-tutorial`
+
+```
+
+Afterwards, you may want to fork suculent/thinx-firmware-js on github and update links in your dockerFile.
+
+Running your custom thinx-js docker image:
+
+```
+`docker run -v $(pwd)/node-persist:/thinx-firmware-js/.node-persist qooldev/thinx-docker-tutorial`
+
+```
