@@ -2,6 +2,10 @@
 
 Instance of THiNX Remote Device Management NodeJS client [thinx-firmware-js](https://github.com/suculent/thinx-firmware-js) safely enclosed inside a docker image, so the app can run safely as root.
 
+### Dependency
+
+Docker - available at [Docker Store for community](https://store.docker.com/search?type=edition&offering=community)
+
 ### Preparations
 
 Configure the ENV variables in Dockerfile/Kitematic:
@@ -22,6 +26,8 @@ Create a folder, where the library will store its persistent data:
 ...and run the container:
 
 `docker run -v $(pwd)/node-persist:/thinx-firmware-js/.node-persist suculent/thinx-node-docker`
+
+```
 
 ### Building the container
 
