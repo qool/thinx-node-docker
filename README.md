@@ -6,13 +6,9 @@ Instance of THiNX Remote Device Management NodeJS client [thinx-firmware-js](htt
 
 Docker - available at [Docker Store for community](https://store.docker.com/search?type=edition&offering=community)
 
-### Building the container
-
-`docker build -t suculent/thinx-node-docker .`
-
 ### Preparations
 
-Configure the ENV variables in Dockerfile/Kitematic:
+Configure the ENV variables in `Dockerfile/Kitematic`:
 
 `API_KEY` enter API Key created on [THiNX RTM Console](https://rtm.thinx.cloud)
 
@@ -20,6 +16,7 @@ Configure the ENV variables in Dockerfile/Kitematic:
 
 `DEVICE_ALIAS` you will find the instance under this name on  Dashboard when it checks in
 
+Update  file `./config.json` accordingly
 
 ```
 
@@ -32,3 +29,7 @@ Create a folder, where the library will store its persistent data:
 `docker run -v $(pwd)/node-persist:/thinx-firmware-js/.node-persist suculent/thinx-node-docker`
 
 ```
+
+### Building the container
+
+`docker build -t suculent/thinx-node-docker .`
