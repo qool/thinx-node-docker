@@ -16,7 +16,7 @@ Configure the ENV variables in `Dockerfile/Kitematic`:
 
 `DEVICE_ALIAS` you will find the instance under this name on  Dashboard when it checks in
 
-Update  file `./config.json` accordingly
+Update  file `./config.json` accordingly.
 
 ```
 
@@ -29,6 +29,9 @@ Create a folder, where the library will store its persistent data:
 `docker run -v $(pwd)/node-persist:/thinx-firmware-js/.node-persist suculent/thinx-node-docker`
 
 ```
+After changes made in config, you should flush the device cache, before run:
+
+`rm -r ./.node-persist`
 
 ### Building the container
 
